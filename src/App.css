@@ -2,6 +2,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
 
+clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
 body {
   font-family: "Open Sans", serif;
 }
@@ -16,11 +22,42 @@ body {
 }
 
 .main {
+  transform: translateX(-25px);
   height: 90vh;
   background: #fff;
   box-shadow: 0px 13px 40px -13px rgba(0,0,0,0.75);
   width: 80%;
   margin: 0 auto;
+}
+
+/* Responsive Design Wrapper----------------------------------------- */
+
+@media screen and (max-width: 40rem) {
+  .wrapper {
+    width: 100%;
+    background: linear-gradient(to right, #e67e22, #e74c3c);
+    width:auto;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .main {
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 60rem) {
+  .wrapper {
+    background: linear-gradient(to right, #e67e22, #e74c3c);
+    width:auto;
+    height: 100%;
+  }
+  .main {
+    height: 100%;
+    width: 80%;
+  }
 }
 
 /* Title Components --------------------------------------------------*/
@@ -51,46 +88,16 @@ body {
   font-family: "Merriweather", serif;
 }
 
-/* Responsive Design Wrapper----------------------------------------- */
-
-@media screen and (max-width: 60rem) {
-  .wrapper {
-    background: linear-gradient(to right, #e67e22, #e74c3c);
-    width:auto;
-    height: 100%;
-  }
-  .main {
-    height: 100%;
-    width: 80%;
-  }
-}
-
-@media screen and (max-width: 40rem) {
-  .wrapper {
-    background: linear-gradient(to right, #e67e22, #e74c3c);
-    width:auto;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-  .main {
-    height: 100%;
-    width: 80%;
-    margin: 0 auto;
-  }
-}
 /* Responsive Design Title------------------------------------------- */
 @media screen and (max-width: 60rem) {
 
   .title-container {
     width:100%;
-    height:20em;
     background: url("./img/bg.jpg") center center no-repeat;
   }
 
   .title-container__title {
     width: 100%;
-    height: 30%;
   }
 
   .title-container__title {
@@ -183,14 +190,15 @@ button:active {
   font-weight: 200;
 }
 
-/* Responsive Design ----------------------------------------------- */
+/* Responsive Design Form ----------------------------------------------- */
 
 @media screen and (max-width: 60rem) {
 
   .form-container {
     width: 100%;
-    /* height: 35vh; /*<--------------------- */
+    height: auto;
     padding: 3rem;
+    overflow: hidden;
   }
 
   input[type="text"] {
@@ -205,7 +213,6 @@ button:active {
   }
 
   .weather__key {
-    color: #f16051;
     width: 100%;
     height: 6em;
   }
